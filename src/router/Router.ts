@@ -6,14 +6,6 @@ import Register from "../pages/register/Register.vue";
 import firebase from "firebase";
 
 const routes: Array<RouteRecordRaw> = [
-  // {
-  //   path: "/",
-  //   name: "Home",
-  //   component: Home,
-  //   meta: {
-  //     requiresAuth: true,
-  //   },
-  // },
   {
     path: "/",
     name: "Dashboard",
