@@ -1,13 +1,7 @@
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
 export default class Register extends Vue {
   private email = "";
   private password = "";

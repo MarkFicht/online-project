@@ -5,17 +5,20 @@
                 <h1>Online project: Vue, Ts, Firebase</h1>
             </header>
             <ul class="links">
-                <li>
-                    <router-link v-if="isLoggedIn" to="/">Dashboard</router-link>
+                <li
+                    v-if="isLoggedIn"
+                >{{ currentUser && currentUser?.displayName ? currentUser.displayName : currentUser.email }}</li>
+                <li v-if="isLoggedIn">
+                    <router-link to="/">Dashboard</router-link>
                 </li>
-                <li>
-                    <router-link v-if="!isLoggedIn" to="/login">Login</router-link>
+                <li v-if="!isLoggedIn">
+                    <router-link to="/login">Login</router-link>
                 </li>
-                <li>
-                    <router-link v-if="!isLoggedIn" to="/register">Register</router-link>
+                <li v-if="!isLoggedIn">
+                    <router-link to="/register">Register</router-link>
                 </li>
-                <li>
-                    <button v-if="isLoggedIn" @click="onLogout">Logout</button>
+                <li v-if="isLoggedIn">
+                    <button @click="onLogout">Logout</button>
                 </li>
             </ul>
         </nav>
@@ -25,35 +28,20 @@
 <script lang="ts" src="./Navbar.ts" />
 
 <style scoped lang="scss">
-$color: #f9e0ff;
-$color2: #eaffe0;
-
-$colorBg: rgb(182, 111, 216);
-$colorBg2: #83cd7a;
-
-$colorHover: #9239ad;
-$colorHover2: #56c048;
-$colorActive: #6f407e;
-$colorActive2: #83cd7a;
-
-$widthContainer: 1440px;
-
-h1 {
-    margin: 0;
-    padding: 0;
-}
+@import "../../main";
 
 .container {
     width: 100%;
-    background-color: $colorBg;
+    background-color: $colorBg2;
+    color: $color;
+    position: relative;
+    z-index: 1000;
 }
 
 #navbar {
     width: $widthContainer;
     height: 60px;
     margin: 0 auto;
-    background-color: $colorBg;
-    color: $color;
     display: grid;
     grid-template-columns: 1fr 450px;
     grid-template-rows: 60px;
@@ -82,22 +70,24 @@ h1 {
             }
 
             &.router-link-exact-active {
-                color: $colorActive;
+                color: $colorHover;
             }
         }
 
         button {
-            width: 80px;
-            height: 40px;
+            width: 120px;
+            height: 36px;
             margin-left: 30px;
             transition: 0.2s all;
             border: none;
             outline: none;
-            background-color: $colorBg2;
-            color: $color2;
+            background-color: $colorBg;
+            color: $color;
             font-size: 16px;
             font-weight: bold;
             border-radius: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
 
             &:hover {

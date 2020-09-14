@@ -5,7 +5,6 @@ import "firebase/auth";
 export default class Login extends Vue {
   private email = "";
   private password = "";
-  private error = "";
 
   async onLogin(event: Event): Promise<void> {
     await firebase
