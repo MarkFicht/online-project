@@ -9,7 +9,7 @@
                     <h5>Quatro</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
                 </header>
-                <div class="tile-img">IMG HERE</div>
+                <div class="tile-img"></div>
                 <div class="tile-status">
                     <p>Free</p>
                 </div>
@@ -23,7 +23,7 @@
                     <h5>Carcassonne</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
                 </header>
-                <div class="tile-img">IMG HERE</div>
+                <div class="tile-img"></div>
                 <div class="tile-status">
                     <p>Loby</p>
                 </div>
@@ -37,7 +37,7 @@
                     <h5>Monopoly</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
                 </header>
-                <div class="tile-img">IMG HERE</div>
+                <div class="tile-img"></div>
                 <div class="tile-status">
                     <p>Busy</p>
                 </div>
@@ -100,7 +100,7 @@ h5 {
         z-index: 2;
 
         > p {
-            color: $colorBg2;
+            color: $colorHover2;
             font-size: 16px;
             text-align: right;
             padding: 30px 20px 0 130px;
@@ -113,11 +113,38 @@ h5 {
     .tile-img {
         width: 48%;
         height: 55%;
-        background-color: $colorHover2;
+        // background-color: $colorHover2;
+        // background-color: transparent;
         position: absolute;
         top: 25%;
         left: 0;
         z-index: 3;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            right: 2px;
+            bottom: 3px;
+            transform: skew(1deg, 1deg);
+            // background-color: $colorHover2;
+            // background-color: transparent;
+            background-image: url(http://placekitten.com/300/400);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: -1px;
+            right: -1px;
+            bottom: -0px;
+            transform: skew(2deg, 2deg);
+            background-color: $colorBg2;
+            z-index: -2;
+        }
     }
 
     .tile-status {
@@ -128,9 +155,10 @@ h5 {
         top: 0;
         left: 5%;
         z-index: 1;
+        user-select: none;
 
         > p {
-            color: $colorBg2;
+            color: $colorHover2;
             text-align: left;
             writing-mode: vertical-rl;
             font-size: 20px;
@@ -154,6 +182,7 @@ h5 {
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
+        user-select: none;
 
         button {
             width: 100%;
@@ -171,7 +200,8 @@ h5 {
             letter-spacing: 1px;
             cursor: pointer;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 background-color: $colorHover2;
             }
         }

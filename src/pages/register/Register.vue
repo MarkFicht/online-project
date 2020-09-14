@@ -86,7 +86,8 @@
         cursor: pointer;
         letter-spacing: 1px;
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: $colorHover2;
         }
     }

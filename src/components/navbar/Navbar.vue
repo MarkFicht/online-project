@@ -90,7 +90,8 @@
             letter-spacing: 1px;
             cursor: pointer;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 background-color: $colorHover2;
             }
         }
