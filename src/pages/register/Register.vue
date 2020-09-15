@@ -87,7 +87,8 @@
         letter-spacing: 1px;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &:active {
             background-color: $colorHover2;
         }
     }

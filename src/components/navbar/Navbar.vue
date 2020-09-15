@@ -91,7 +91,8 @@
             cursor: pointer;
 
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background-color: $colorHover2;
             }
         }
