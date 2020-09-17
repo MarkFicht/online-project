@@ -14,7 +14,7 @@
                     <p>Free</p>
                 </div>
                 <div class="tile-buttons">
-                    <button>Play</button>
+                    <button @click="(event) => onPlay(event, 'Quatro')">Play</button>
                     <button>Desc</button>
                 </div>
             </section>
@@ -28,7 +28,7 @@
                     <p>Loby</p>
                 </div>
                 <div class="tile-buttons">
-                    <button>Play</button>
+                    <button @click="(event) => onPlay(event, 'Carcassone')">Play</button>
                     <button>Desc</button>
                 </div>
             </section>
@@ -42,7 +42,7 @@
                     <p>Busy</p>
                 </div>
                 <div class="tile-buttons">
-                    <button>Play</button>
+                    <button @click="(event) => onPlay(event, 'Monopoly')">Play</button>
                     <button>Desc</button>
                 </div>
             </section>
