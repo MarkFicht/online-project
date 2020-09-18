@@ -31,6 +31,24 @@ export default class Dashboard extends Vue {
   }
 
   // ---
+  onShowDesc(event: Event, gameName: string): void {
+    console.log("work?", event, gameName);
+
+    if (gameName === GameName.QUATRO) {
+      console.log("%c desc QUATRO -> ", "background: #222; color: #bada55");
+    } else if (gameName === GameName.CARCASSONE) {
+      console.log("%c desc CARcas -> ", "background: #222; color: #bada55");
+    } else if (gameName === GameName.MONOPOLY) {
+      console.log("%c desc MONO -> ", "background: #222; color: #bada55");
+    } else {
+      console.log(
+        "%c ERROR with gameName -> ",
+        "background: #222; color: tomato"
+      );
+    }
+  }
+
+  // ---
   async onLogout(event: Event): Promise<void> {
     await firebase
       .auth()

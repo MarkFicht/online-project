@@ -15,7 +15,7 @@
                 </div>
                 <div class="tile-buttons">
                     <button @click="(event) => onPlay(event, 'Quatro')">Play</button>
-                    <button>Desc</button>
+                    <button @click="(event) => onShowDesc(event, 'Quatro')">Desc</button>
                 </div>
             </section>
             <section class="tile-container">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="tile-buttons">
                     <button @click="(event) => onPlay(event, 'Carcassone')">Play</button>
-                    <button>Desc</button>
+                    <button @click="(event) => onShowDesc(event, 'Carcassone')">Desc</button>
                 </div>
             </section>
             <section class="tile-container">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="tile-buttons">
                     <button @click="(event) => onPlay(event, 'Monopoly')">Play</button>
-                    <button>Desc</button>
+                    <button @click="(event) => onShowDesc(event, 'Monopoly')">Desc</button>
                 </div>
             </section>
         </article>
