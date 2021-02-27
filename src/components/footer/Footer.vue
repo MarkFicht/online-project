@@ -1,32 +1,13 @@
 <template>
     <div class="wrapper">
-        <nav id="navbar-wrapper">
-            <header class="header-wrapper">
-                <h1>Online project: Vue, Ts, Firebase</h1>
-            </header>
-
-            <ul class="links-wrapper">
-                <li
-                    v-if="isLoggedIn"
-                >{{ currentUser && currentUser?.displayName ? currentUser.displayName : currentUser.email }}</li>
-                <li v-if="isLoggedIn">
-                    <router-link to="/">Dashboard</router-link>
-                </li>
-                <li v-if="!isLoggedIn">
-                    <router-link to="/login">Login</router-link>
-                </li>
-                <li v-if="!isLoggedIn">
-                    <router-link to="/register">Register</router-link>
-                </li>
-                <li v-if="isLoggedIn">
-                    <button @click="onLogout">Logout</button>
-                </li>
-            </ul>
-        </nav>
+        <div class="footer-wrapper">
+            <div>marek</div>
+            <div>links</div>
+        </div>
     </div>
 </template>
 
-<script lang="ts" src="./Navbar.ts" />
+<script lang="ts" src="./Footer.ts" />
 
 <style scoped lang="scss">
 @import "../../main";
@@ -37,6 +18,17 @@
     color: $color;
     position: relative;
     z-index: 1000;
+}
+
+.footer-wrapper {
+    width: $widthWrapper1440;
+    height: 60px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px;
+    justify-content: center;
+    align-items: center;
 }
 
 #navbar-wrapper {

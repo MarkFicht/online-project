@@ -1,9 +1,11 @@
 <template>
-    <main class="dashboard">
-        <header>
+    <main class="wrapper">
+        <header class="header-wrapper">
             <h3>Dashboard</h3>
         </header>
-        <article class="container">
+
+        <article class="games-wrapper">
+            <!-- Quatro -->
             <section class="tile-container">
                 <header class="tile-name">
                     <h5>Quatro</h5>
@@ -18,6 +20,8 @@
                     <button @click="(event) => onShowDesc(event, 'Quatro')">Desc</button>
                 </div>
             </section>
+
+            <!-- Carcassonne -->
             <section class="tile-container">
                 <header class="tile-name">
                     <h5>Carcassonne</h5>
@@ -32,6 +36,8 @@
                     <button @click="(event) => onShowDesc(event, 'Carcassone')">Desc</button>
                 </div>
             </section>
+
+            <!-- Monopoly -->
             <section class="tile-container">
                 <header class="tile-name">
                     <h5>Monopoly</h5>
@@ -46,6 +52,54 @@
                     <button @click="(event) => onShowDesc(event, 'Monopoly')">Desc</button>
                 </div>
             </section>
+
+            <!-- Dummy -->
+            <section class="tile-container">
+                <header class="tile-name">
+                    <h5>Dummy</h5>
+                    <p>-</p>
+                </header>
+                <div class="tile-img"></div>
+                <div class="tile-status">
+                    <p>Busy</p>
+                </div>
+                <div class="tile-buttons">
+                    <button>Play</button>
+                    <button>Desc</button>
+                </div>
+            </section>
+
+            <!-- Dummy -->
+            <section class="tile-container">
+                <header class="tile-name">
+                    <h5>Dummy</h5>
+                    <p>-</p>
+                </header>
+                <div class="tile-img"></div>
+                <div class="tile-status">
+                    <p>Busy</p>
+                </div>
+                <div class="tile-buttons">
+                    <button>Play</button>
+                    <button>Desc</button>
+                </div>
+            </section>
+
+            <!-- Dummy -->
+            <section class="tile-container">
+                <header class="tile-name">
+                    <h5>Dummy</h5>
+                    <p>-</p>
+                </header>
+                <div class="tile-img"></div>
+                <div class="tile-status">
+                    <p>Busy</p>
+                </div>
+                <div class="tile-buttons">
+                    <button>Play</button>
+                    <button>Desc</button>
+                </div>
+            </section>
         </article>
     </main>
 </template>
@@ -55,43 +109,53 @@
 <style scoped lang="scss">
 @import "../../main";
 
-h3 {
-    color: $colorBg2;
-    font-size: 46px;
-    padding: 20px 0;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-h5 {
-    color: $colorBg2;
-    font-size: 26px;
-    text-align: right;
-    padding: 20px 50px 0 0;
-    margin: 0;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.dashboard {
+.wrapper {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100%;
 }
 
-.container {
-    width: $widthContainer;
-    margin: 8vh auto 0;
+.header-wrapper {
+    > h3 {
+        color: $colorBg2;
+        font-size: 40px;
+        height: 60px;
+        margin: 20px 0 30px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+}
+
+.games-wrapper {
+    width: $widthWrapper1440;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: auto;
+    grid-gap: 30px 90px;
+    justify-content: center;
 }
 
+// tile with selected game
 .tile-container {
     height: 400px;
+    width: 400px;
     position: relative;
+    transition: 0.2s all;
+    margin-bottom: 60px;
+    // border: 1px solid red;
+    filter: drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
+        drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
+        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
+        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+
+    &:hover,
+    &:focus,
+    &:active {
+        transform: scale(1.05);
+    }
 
     .tile-name {
-        width: 76%;
+        width: 78%;
         height: 94%;
         background-color: $colorHover;
         position: absolute;
@@ -99,11 +163,21 @@ h5 {
         right: 4%;
         z-index: 2;
 
+        > h5 {
+            color: $colorBg2;
+            font-size: 24px;
+            text-align: right;
+            padding: 15px 20px 0 0;
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
         > p {
             color: $colorHover2;
             font-size: 16px;
             text-align: right;
-            padding: 30px 20px 0 130px;
+            padding: 20px 20px 0 110px;
             margin: 0;
             font-weight: bold;
             letter-spacing: 2px;
@@ -111,12 +185,12 @@ h5 {
     }
 
     .tile-img {
-        width: 48%;
-        height: 55%;
+        width: 43%;
+        height: 52%;
         // background-color: $colorHover2;
         // background-color: transparent;
         position: absolute;
-        top: 25%;
+        top: 23%;
         left: 0;
         z-index: 3;
 
@@ -171,11 +245,11 @@ h5 {
     }
 
     .tile-buttons {
-        width: 33%;
+        width: 40%;
         height: 24%;
         // background-color: $colorBg2;
         position: absolute;
-        bottom: 10%;
+        bottom: 7%;
         right: 0;
         z-index: 4;
         display: flex;
@@ -202,10 +276,27 @@ h5 {
 
             &:hover,
             &:focus,
+            &:active,
+            &:focus,
             &:active {
                 background-color: $colorHover2;
             }
         }
+    }
+}
+
+// ---
+@media (max-width: $widthWrapper1440) {
+    .games-wrapper {
+        width: $widthWrapper1024;
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+
+@media (max-width: $widthWrapper1024) {
+    .games-wrapper {
+        width: $widthWrapper768;
+        grid-template-columns: repeat(1, 400px);
     }
 }
 </style>

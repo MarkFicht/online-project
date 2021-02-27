@@ -1,17 +1,19 @@
 <template>
-    <form class="login" @submit.prevent="onLogin">
-        <h3>Login</h3>
+    <main class="wrapper">
+        <form class="login-wrapper" @submit.prevent="onLogin">
+            <h3 class="header">Login</h3>
 
-        <div class="email">
-            <input type="text" v-model="email" placeholder="Email" />
-        </div>
+            <div class="email">
+                <input type="text" v-model="email" placeholder="Email" />
+            </div>
 
-        <div class="password">
-            <input type="password" v-model="password" placeholder="Password" />
-        </div>
+            <div class="password">
+                <input type="password" v-model="password" placeholder="Password" />
+            </div>
 
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit">Login</button>
+        </form>
+    </main>
 </template>
 
 <script lang="ts" src="./Login.ts" />
@@ -19,13 +21,24 @@
 <style scoped lang="scss">
 @import "../../main";
 
-.login {
-    width: 400px;
-    margin: 20vh auto 0;
+.wrapper {
+    width: 100%;
+    height: calc(100vh - 120px);
+    min-height: 560px;
+    display: flex;
+}
+
+.login-wrapper {
+    width: 560px;
+    height: 450px;
+    margin: auto;
     position: relative;
     z-index: 0;
     background-color: $colorBg;
-    display: block;
+    display: grid;
+    grid-template-rows: 3fr 60px 60px 4fr;
+    justify-content: center;
+    align-items: center;
 
     &::before {
         content: "";
@@ -49,48 +62,48 @@
         background-color: $colorBg2;
         z-index: -2;
     }
+}
 
-    h3 {
-        color: $colorBg2;
-        font-size: 46px;
-        padding: 20px 0;
-        font-weight: bold;
-        letter-spacing: 2px;
-    }
+.header {
+    color: $colorBg2;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
+.email,
+.password {
     input {
         background-color: transparent;
+        width: 300px;
         border: 0;
         border-bottom: 2px solid $colorHover2;
         outline: none;
-        font-size: 18px;
+        font-size: 20px;
         padding: 10px;
-        margin-bottom: 10px;
         color: $colorBg2;
         font-weight: bold;
         letter-spacing: 2px;
     }
+}
 
-    button {
-        width: 150px;
-        height: 50px;
-        margin: 30px 0 40px;
-        transition: 0.2s all;
-        border: none;
-        outline: none;
-        background-color: $colorBg2;
-        color: $color;
-        font-size: 22px;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
-        letter-spacing: 1px;
+button[type="submit"] {
+    height: 50px;
+    transition: 0.2s all;
+    border: none;
+    outline: none;
+    background-color: $colorBg2;
+    color: $color;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
 
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: $colorHover2;
-        }
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $colorHover2;
     }
 }
 </style>
