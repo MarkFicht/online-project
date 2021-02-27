@@ -1,11 +1,27 @@
-import { Vue } from "vue-class-component";
+import { Vue, Options } from "vue-class-component";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { GameName } from "../../enums/GameName";
 
+import VanillaTilt from "vanilla-tilt";
+
+@Options({
+  mounted(): void {
+    VanillaTilt.init(this.$refs.tileContainer1, { speed: 1500 });
+    VanillaTilt.init(this.$refs.tileContainer2, { speed: 1500 });
+    VanillaTilt.init(this.$refs.tileContainer3, { speed: 1500 });
+    VanillaTilt.init(this.$refs.tileContainer4, { speed: 1500 });
+    VanillaTilt.init(this.$refs.tileContainer5, { speed: 1500 });
+    VanillaTilt.init(this.$refs.tileContainer6, { speed: 1500 });
+  },
+})
 export default class Dashboard extends Vue {
   private isLoggedIn = false;
   private currentUser = false;
+
+  // mounted(): void {
+  //   // VanillaTilt.init(this.$refs.tileContainer);
+  // }
 
   // ---
   onPlay(event: Event, gameName: string): void {

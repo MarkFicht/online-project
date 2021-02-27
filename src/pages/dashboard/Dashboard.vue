@@ -6,55 +6,76 @@
 
         <article class="games-wrapper">
             <!-- Quatro -->
-            <section class="tile-container">
+            <section class="tile-container" ref="tileContainer1">
                 <header class="tile-name">
                     <h5>Quatro</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime, ad!
+                    </p>
                 </header>
                 <div class="tile-img"></div>
                 <div class="tile-status">
                     <p>Free</p>
                 </div>
                 <div class="tile-buttons">
-                    <button @click="(event) => onPlay(event, 'Quatro')">Play</button>
-                    <button @click="(event) => onShowDesc(event, 'Quatro')">Desc</button>
+                    <button @click="(event) => onPlay(event, 'Quatro')">
+                        Play
+                    </button>
+                    <button @click="(event) => onShowDesc(event, 'Quatro')">
+                        Desc
+                    </button>
                 </div>
             </section>
 
             <!-- Carcassonne -->
-            <section class="tile-container">
+            <section class="tile-container" ref="tileContainer2">
                 <header class="tile-name">
                     <h5>Carcassonne</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime, ad!
+                    </p>
                 </header>
                 <div class="tile-img"></div>
                 <div class="tile-status">
                     <p>Loby</p>
                 </div>
                 <div class="tile-buttons">
-                    <button @click="(event) => onPlay(event, 'Carcassone')">Play</button>
-                    <button @click="(event) => onShowDesc(event, 'Carcassone')">Desc</button>
+                    <button @click="(event) => onPlay(event, 'Carcassone')">
+                        Play
+                    </button>
+                    <button @click="(event) => onShowDesc(event, 'Carcassone')">
+                        Desc
+                    </button>
                 </div>
             </section>
 
             <!-- Monopoly -->
-            <section class="tile-container">
+            <section class="tile-container" ref="tileContainer3">
                 <header class="tile-name">
                     <h5>Monopoly</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime, ad!
+                    </p>
                 </header>
                 <div class="tile-img"></div>
                 <div class="tile-status">
                     <p>Busy</p>
                 </div>
                 <div class="tile-buttons">
-                    <button @click="(event) => onPlay(event, 'Monopoly')">Play</button>
-                    <button @click="(event) => onShowDesc(event, 'Monopoly')">Desc</button>
+                    <button @click="(event) => onPlay(event, 'Monopoly')">
+                        Play
+                    </button>
+                    <button @click="(event) => onShowDesc(event, 'Monopoly')">
+                        Desc
+                    </button>
                 </div>
             </section>
 
             <!-- Dummy -->
-            <section class="tile-container">
+            <section class="tile-container" ref="tileContainer4">
                 <header class="tile-name">
                     <h5>Dummy</h5>
                     <p>-</p>
@@ -70,7 +91,7 @@
             </section>
 
             <!-- Dummy -->
-            <section class="tile-container">
+            <section class="tile-container" ref="tileContainer5">
                 <header class="tile-name">
                     <h5>Dummy</h5>
                     <p>-</p>
@@ -86,7 +107,7 @@
             </section>
 
             <!-- Dummy -->
-            <section class="tile-container">
+            <section class="tile-container" ref="tileContainer6">
                 <header class="tile-name">
                     <h5>Dummy</h5>
                     <p>-</p>
@@ -142,57 +163,60 @@
     position: relative;
     transition: 0.2s all;
     margin-bottom: 60px;
-    // border: 1px solid red;
-    filter: drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
-        drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
-        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
-        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
-
-    &:hover,
-    &:focus,
-    &:active {
-        transform: scale(1.05);
-    }
+    // filter: drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
+    //     drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
+    //     drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
+    //     drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    transform-style: preserve-3d;
+    perspective: 1000px;
 
     .tile-name {
-        width: 78%;
-        height: 94%;
+        width: 285px;
+        height: 352px;
         background-color: $colorHover;
         position: absolute;
-        bottom: 0;
-        right: 4%;
+        bottom: 3.5%;
+        right: 8%;
         z-index: 2;
+        transform: translateZ(30px);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        -webkit-box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
 
-        > h5 {
+        h5 {
             color: $colorBg2;
             font-size: 24px;
             text-align: right;
-            padding: 15px 20px 0 0;
+            padding: 20px 25px 0 0;
             margin: 0;
             font-weight: bold;
             letter-spacing: 2px;
+            transform: translateZ(15px);
         }
 
-        > p {
+        p {
             color: $colorHover2;
             font-size: 16px;
             text-align: right;
-            padding: 20px 20px 0 110px;
+            padding: 20px 25px 0 110px;
             margin: 0;
             font-weight: bold;
             letter-spacing: 2px;
+            transform: translateZ(15px);
         }
     }
 
     .tile-img {
-        width: 43%;
-        height: 52%;
+        width: 150px;
+        height: 180px;
         // background-color: $colorHover2;
         // background-color: transparent;
         position: absolute;
-        top: 23%;
-        left: 0;
+        top: 27%;
+        left: 7%;
         z-index: 3;
+        transform: translateZ(60px);
 
         &::before {
             content: "";
@@ -222,14 +246,17 @@
     }
 
     .tile-status {
-        width: 55%;
-        height: 88%;
+        width: 205px;
+        height: 340px;
         background-color: $color;
         position: absolute;
-        top: 0;
-        left: 5%;
+        top: 2%;
+        left: 7%;
         z-index: 1;
         user-select: none;
+        transform: translateZ(15px);
+        -webkit-box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
 
         > p {
             color: $colorHover2;
@@ -245,23 +272,24 @@
     }
 
     .tile-buttons {
-        width: 40%;
-        height: 24%;
+        width: 150px;
+        height: 92px;
         // background-color: $colorBg2;
         position: absolute;
-        bottom: 7%;
-        right: 0;
+        bottom: 12.5%;
+        right: 6.5%;
         z-index: 4;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
         user-select: none;
+        transform: translateZ(60px);
 
         button {
-            width: 100%;
-            font-size: 20px;
+            width: 150px;
             height: 40px;
+            font-size: 20px;
             transition: 0.2s all;
             border: none;
             outline: none;
@@ -280,6 +308,7 @@
             &:focus,
             &:active {
                 background-color: $colorHover2;
+                transform: scale(1.05);
             }
         }
     }
