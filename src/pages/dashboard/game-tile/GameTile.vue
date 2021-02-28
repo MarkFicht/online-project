@@ -2,7 +2,10 @@
     <section class="tile-container">
         <header class="tile-name">
             <h5>Quatro</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ad!</p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+                ad!
+            </p>
         </header>
         <div class="tile-img"></div>
         <div class="tile-status">
@@ -10,7 +13,9 @@
         </div>
         <div class="tile-buttons">
             <button @click="(event) => onPlay(event, 'Quatro')">Play</button>
-            <button @click="(event) => onShowDesc(event, 'Quatro')">Desc</button>
+            <button @click="(event) => onShowDesc(event, 'Quatro')">
+                Desc
+            </button>
         </div>
     </section>
 </template>
@@ -41,7 +46,7 @@
     .tile-name {
         width: 78%;
         height: 94%;
-        background-color: $colorHover;
+        background-color: $color;
         position: absolute;
         bottom: 0;
         right: 4%;
@@ -58,7 +63,7 @@
         }
 
         > p {
-            color: $colorHover2;
+            color: $color2;
             font-size: 16px;
             text-align: right;
             padding: 20px 20px 0 110px;
@@ -71,7 +76,7 @@
     .tile-img {
         width: 43%;
         height: 52%;
-        // background-color: $colorHover2;
+        // background-color: $color2;
         // background-color: transparent;
         position: absolute;
         top: 23%;
@@ -86,7 +91,7 @@
             right: 2px;
             bottom: 3px;
             transform: skew(1deg, 1deg);
-            // background-color: $colorHover2;
+            // background-color: $color2;
             // background-color: transparent;
             background-image: url(http://placekitten.com/300/400);
             z-index: -1;
@@ -116,7 +121,7 @@
         user-select: none;
 
         > p {
-            color: $colorHover2;
+            color: $color2;
             text-align: left;
             writing-mode: vertical-rl;
             font-size: 20px;
@@ -163,7 +168,7 @@
             &:active,
             &:focus,
             &:active {
-                background-color: $colorHover2;
+                background-color: $color2;
             }
         }
     }

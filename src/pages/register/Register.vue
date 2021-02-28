@@ -92,7 +92,7 @@
         background-color: transparent;
         width: 300px;
         border: 0;
-        border-bottom: 2px solid $colorHover2;
+        border-bottom: 2px solid $colorBg2;
         outline: none;
         font-size: 20px;
         padding: 10px;
@@ -119,7 +119,7 @@ button[type="submit"] {
     &:hover,
     &:focus,
     &:active {
-        background-color: $colorHover2;
+        background-color: $color2;
     }
 }
 </style>

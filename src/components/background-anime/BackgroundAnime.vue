@@ -19,13 +19,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    // background-color: $colorBg;
+    background-color: $color2;
 
     .background-anime-cube {
         position: absolute;
         width: 50px;
         height: 100px;
-        // box-shadow: 1px 1px 8px rgba($color: #000000, $alpha: 0.2);
-        background-color: rgba(0, 0, 0, 0.03);
+        // background-color: rgba($color2, 0.05);
+        background-color: rgba($color, 0.05);
     }
 }
 </style>

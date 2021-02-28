@@ -76,9 +76,9 @@
         text-decoration: none;
         color: white;
         font-size: 1.4em;
-        border: 1px solid rgba($color: #ffffff, $alpha: 0.4);
-        border-right: 1px solid rgba($color: #ffffff, $alpha: 0.2);
-        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+        border: 2px solid rgba($color: $color, $alpha: 0.4);
+        border-right: 2px solid rgba($color: $color, $alpha: 0.2);
+        border-bottom: 2px solid rgba($color: $color, $alpha: 0.2);
     }
 
     ul li a::before {
@@ -89,7 +89,7 @@
         width: 46px;
         height: 100%;
         border-radius: 10px;
-        background: rgba($color: #ffffff, $alpha: 0.5);
+        background: rgba($color: $color, $alpha: 0.5);
         transform: skewX(45deg) translateX(90px);
         transition: all 0.5s;
     }

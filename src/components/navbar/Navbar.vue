@@ -6,9 +6,13 @@
             </header>
 
             <ul class="links-wrapper">
-                <li
-                    v-if="isLoggedIn"
-                >{{ currentUser && currentUser?.displayName ? currentUser.displayName : currentUser.email }}</li>
+                <li v-if="isLoggedIn">
+                    {{
+                        currentUser && currentUser?.displayName
+                            ? currentUser.displayName
+                            : currentUser.email
+                    }}
+                </li>
                 <li v-if="isLoggedIn">
                     <router-link to="/">Dashboard</router-link>
                 </li>
@@ -70,17 +74,18 @@
         transition: 0.2s all;
 
         &:hover {
-            color: $colorHover;
+            color: $colorBg;
         }
 
         &.router-link-exact-active {
-            color: $colorHover;
+            color: $colorBg;
         }
     }
 
     button {
         width: 120px;
         height: 36px;
+        line-height: 36px;
         margin-left: 30px;
         transition: 0.2s all;
         border: none;
@@ -97,7 +102,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $colorHover2;
+            background-color: $color2;
         }
     }
 }

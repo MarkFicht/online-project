@@ -1,8 +1,8 @@
 <template>
     <main class="wrapper">
-        <header class="header-wrapper">
+        <!-- <header class="header-wrapper">
             <h3>Dashboard</h3>
-        </header>
+        </header> -->
 
         <article class="games-wrapper">
             <!-- Quatro -->
@@ -135,27 +135,27 @@
     height: 100%;
 }
 
-.header-wrapper {
-    z-index: 1;
-    position: relative;
+// .header-wrapper {
+//     z-index: 1;
+//     position: relative;
 
-    > h3 {
-        color: $colorBg2;
-        font-size: 40px;
-        height: 60px;
-        margin: 20px 0 30px;
-        font-weight: bold;
-        letter-spacing: 2px;
-    }
-}
+//     > h3 {
+//         color: $colorBg2;
+//         font-size: 40px;
+//         height: 60px;
+//         margin: 20px 0 30px;
+//         font-weight: bold;
+//         letter-spacing: 2px;
+//     }
+// }
 
 .games-wrapper {
     width: $widthWrapper1440;
-    margin: 0 auto;
+    margin: 60px auto 75px;
     display: grid;
     grid-template-columns: repeat(3, 400px);
     grid-template-rows: auto;
-    grid-gap: 30px 90px;
+    grid-gap: 90px;
     justify-content: center;
 }
 
@@ -165,7 +165,6 @@
     width: 400px;
     position: relative;
     transition: 0.2s all;
-    margin-bottom: 60px;
     // filter: drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
     //     drop-shadow(-4px -4px 5px rgba(123, 145, 192, 0.2))
     //     drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
@@ -176,7 +175,7 @@
     .tile-name {
         width: 285px;
         height: 352px;
-        background-color: $colorHover;
+        background-color: $colorBg;
         position: absolute;
         bottom: 3.5%;
         right: 8%;
@@ -184,8 +183,8 @@
         transform: translateZ(30px);
         transform-style: preserve-3d;
         perspective: 1000px;
-        -webkit-box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
-        box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.66);
+        box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.66);
 
         h5 {
             color: $colorBg2;
@@ -199,7 +198,7 @@
         }
 
         p {
-            color: $colorHover2;
+            color: $color2;
             font-size: 16px;
             text-align: right;
             padding: 20px 25px 0 110px;
@@ -213,7 +212,6 @@
     .tile-img {
         width: 150px;
         height: 180px;
-        // background-color: $colorHover2;
         // background-color: transparent;
         position: absolute;
         top: 27%;
@@ -229,7 +227,6 @@
             right: 2px;
             bottom: 3px;
             transform: skew(1deg, 1deg);
-            // background-color: $colorHover2;
             // background-color: transparent;
             background-image: url(http://placekitten.com/300/400);
             z-index: -1;
@@ -258,11 +255,11 @@
         z-index: 1;
         user-select: none;
         transform: translateZ(15px);
-        -webkit-box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
-        box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.66);
+        box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.66);
 
         > p {
-            color: $colorHover2;
+            color: $color2;
             text-align: left;
             writing-mode: vertical-rl;
             font-size: 20px;
@@ -270,7 +267,7 @@
             // text-orientation: upright;
             font-weight: bold;
             margin: 0;
-            padding: 15px;
+            padding: 18px 15px;
         }
     }
 
@@ -290,6 +287,7 @@
         transform: translateZ(60px);
 
         button {
+            position: relative;
             width: 150px;
             height: 40px;
             font-size: 20px;
@@ -304,14 +302,36 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
+            border: 2px solid rgba($color: $color, $alpha: 0.4);
+            border-right: 2px solid rgba($color: $color, $alpha: 0.2);
+            border-bottom: 2px solid rgba($color: $color, $alpha: 0.2);
+            transition: all 0.5s;
+            overflow: hidden;
 
             &:hover,
             &:focus,
-            &:active,
-            &:focus,
             &:active {
-                background-color: $colorHover2;
+                background-color: $color2;
                 transform: scale(1.05);
+                // -webkit-box-shadow: 2px 2px 10px 3px rgba(#ffffff, 0.36);
+                // box-shadow: 2px 2px 10px 3px rgba(#ffffff, 0.36);
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100%;
+                border-radius: 0;
+                background: rgba($color: $color, $alpha: 0.5);
+                transform: skewX(45deg) translateX(200px);
+                transition: all 0.5s;
+            }
+
+            &:hover::before {
+                transform: skewX(45deg) translateX(-200px);
             }
         }
     }
