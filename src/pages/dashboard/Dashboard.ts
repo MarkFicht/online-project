@@ -19,10 +19,6 @@ export default class Dashboard extends Vue {
   private isLoggedIn = false;
   private currentUser = false;
 
-  // mounted(): void {
-  //   // VanillaTilt.init(this.$refs.tileContainer);
-  // }
-
   // ---
   onPlay(event: Event, gameName: string): void {
     console.log("work?", event, gameName);
@@ -30,6 +26,7 @@ export default class Dashboard extends Vue {
     // TO DO - Check status game in ifs
     // TO DO - Redirect to selected game, if can
     // TO DO - Prepare endpoints
+    // TO DO - Add toggle button for active background
     // TO DO -
 
     if (gameName === GameName.QUATRO) {

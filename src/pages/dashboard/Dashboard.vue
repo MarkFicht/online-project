@@ -136,6 +136,9 @@
 }
 
 .header-wrapper {
+    z-index: 1;
+    position: relative;
+
     > h3 {
         color: $colorBg2;
         font-size: 40px;

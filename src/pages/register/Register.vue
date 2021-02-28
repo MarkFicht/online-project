@@ -1,6 +1,12 @@
 <template>
     <main class="wrapper">
-        <form class="register-wrapper" @submit.prevent="onRegister">
+        <form
+            class="register-wrapper"
+            @submit.prevent="onRegister"
+            ref="loginContainer"
+            data-tilt-glare
+            data-tilt-max-glare="0.33"
+        >
             <h3 class="header">Register</h3>
 
             <div class="email">
@@ -8,7 +14,11 @@
             </div>
 
             <div class="password">
-                <input type="password" v-model="password" placeholder="Password" />
+                <input
+                    type="password"
+                    v-model="password"
+                    placeholder="Password"
+                />
             </div>
 
             <button type="submit">Register</button>
@@ -36,16 +46,18 @@
     z-index: 0;
     background-color: $colorBg;
     display: grid;
-    grid-template-rows: 3fr 60px 60px 4fr;
+    grid-template-rows: 2fr 60px 60px 3fr;
     justify-content: center;
     align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 
     &::before {
         content: "";
         position: absolute;
         top: 0;
-        left: 2px;
-        right: 2px;
+        left: 0;
+        right: 0;
         bottom: 0;
         background-color: $colorBg;
         z-index: -1;
@@ -69,10 +81,13 @@
     font-size: 42px;
     font-weight: bold;
     letter-spacing: 2px;
+    transform: translateZ(30px);
 }
 
 .email,
 .password {
+    transform: translateZ(20px);
+
     input {
         background-color: transparent;
         width: 300px;
@@ -99,6 +114,7 @@ button[type="submit"] {
     border-radius: 10px;
     cursor: pointer;
     letter-spacing: 1px;
+    transform: translateZ(30px);
 
     &:hover,
     &:focus,

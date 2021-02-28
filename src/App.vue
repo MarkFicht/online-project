@@ -1,5 +1,6 @@
 <template>
     <Navbar :key="$route.fullPath" />
+    <BackgroundAnime />
     <router-view />
     <Footer />
 </template>
