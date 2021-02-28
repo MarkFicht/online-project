@@ -1,9 +1,19 @@
 <template>
     <div class="wrapper">
-        <div class="footer-wrapper">
-            <div>marek</div>
-            <div>links</div>
-        </div>
+        <footer id="footer-wrapper">
+            <p>Created by Marek Ficht</p>
+            <ul>
+                <li>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-envelope-open"></i></a>
+                </li>
+            </ul>
+        </footer>
     </div>
 </template>
 
@@ -20,89 +30,84 @@
     z-index: 1000;
 }
 
-.footer-wrapper {
+#footer-wrapper {
     width: $widthWrapper1440;
     height: 60px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60px;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
 
-#navbar-wrapper {
-    width: $widthWrapper1440;
-    height: 60px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60px;
-    justify-content: center;
-    align-items: center;
-}
-
-.header-wrapper {
-    display: flex;
-    margin-left: 20px;
-}
-
-.links-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style-type: none;
-    margin-right: 20px;
-
-    a {
-        font-weight: bold;
-        color: $color;
-        text-decoration: none;
-        margin-left: 30px;
-        transition: 0.2s all;
-
-        &:hover {
-            color: $colorHover;
-        }
-
-        &.router-link-exact-active {
-            color: $colorHover;
-        }
+    p {
+        font-size: 20px;
+        margin-right: 20px;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: 1px;
     }
 
-    button {
-        width: 120px;
-        height: 36px;
-        margin-left: 30px;
-        transition: 0.2s all;
-        border: none;
-        outline: none;
-        background-color: $colorBg;
-        color: $color;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
+    ul {
+        position: relative;
+        display: flex;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: $colorHover2;
-        }
+    ul li {
+        position: relative;
+        list-style: none;
+        margin: 0 10px;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    ul li a {
+        width: 46px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 1.4em;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.4);
+        border-right: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+    }
+
+    ul li a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 46px;
+        height: 100%;
+        border-radius: 10px;
+        background: rgba($color: #ffffff, $alpha: 0.5);
+        transform: skewX(45deg) translateX(90px);
+        transition: all 0.5s;
+    }
+
+    ul li a:hover::before {
+        transform: skewX(45deg) translateX(-90px);
     }
 }
 
 // ---
 @media (max-width: $widthWrapper1440) {
-    #navbar-wrapper {
+    #footer-wrapper {
         width: $widthWrapper1024;
     }
 }
 
 @media (max-width: $widthWrapper1024) {
-    #navbar-wrapper {
+    #footer-wrapper {
         width: $widthWrapper768;
     }
 }

@@ -5,6 +5,9 @@ import router from "./router/Router";
 import store from "./store/Store";
 import firebase from "firebase/app";
 
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
+
 // --- Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDp574Cg72qIyAimYGfHFSO0txNP7sZmKk",
