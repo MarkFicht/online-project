@@ -24,7 +24,7 @@
 
 .wrapper {
     width: 100%;
-    background-color: $colorBg2;
+    background-color: rgba($color: $colorBg2, $alpha: 1);
     color: $color;
     position: relative;
     z-index: 1000;

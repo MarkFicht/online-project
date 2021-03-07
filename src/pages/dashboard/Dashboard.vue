@@ -151,7 +151,7 @@
 
 .games-wrapper {
     width: $widthWrapper1440;
-    margin: 60px auto 75px;
+    margin: 50px auto 75px;
     display: grid;
     grid-template-columns: repeat(3, 400px);
     grid-template-rows: auto;

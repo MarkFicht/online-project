@@ -26,7 +26,11 @@ export default class Dashboard extends Vue {
     // TO DO - Check status game in ifs
     // TO DO - Redirect to selected game, if can
     // TO DO - Prepare endpoints
-    // TO DO - Add toggle button for active background
+    // TO DO - Add toggle button for active colors on background
+
+    // TO DO - Create activeToken ( checking user, disconnec user, left user, etc.. )
+    // TO DO - Store for current state in game ( if user back after disconnect )
+
     // TO DO -
 
     if (gameName === GameName.QUATRO) {
