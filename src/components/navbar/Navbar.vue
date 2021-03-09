@@ -66,14 +66,15 @@
         display: flex;
         justify-self: center;
         align-items: center;
-        margin-right: 30px;
+        margin-right: 32px;
+        font-size: 28px;
     }
 
     > p {
         display: flex;
         justify-self: center;
         align-items: center;
-        font-size: 18px;
+        font-size: 20px;
         padding-top: 6px;
     }
 }
@@ -96,13 +97,13 @@
         text-decoration: none;
         margin-left: 30px;
         transition: 0.2s all;
-        padding: 4px 10px;
+        padding: 6px 10px;
         display: block;
         height: 26px;
         line-height: 26px;
         position: relative;
         z-index: 0;
-        font-size: 18px;
+        font-size: 20px;
         letter-spacing: 1px;
 
         &::after {
@@ -161,15 +162,15 @@
     button {
         position: relative;
         overflow: hidden;
-        width: 120px;
-        height: 38px;
+        width: 130px;
+        height: 40px;
         line-height: 32px;
-        margin-left: 40px;
+        margin-left: 42px;
         transition: 0.2s all;
         outline: none;
         background-color: $color;
         color: $colorBg2;
-        font-size: 1.1em;
+        font-size: 1.2em;
         font-weight: bold;
         border-radius: 10px;
         // text-transform: uppercase;
