@@ -1,5 +1,8 @@
 export enum GameStatus {
-  free = 0,
-  waitingForPlayers = 1,
-  started = 2,
+  // free game
+  "Free" = 0,
+  // 1 or all players are in loby
+  "Loby" = 1,
+  // in game
+  "Busy" = 2,
 }

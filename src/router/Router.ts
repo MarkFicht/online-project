@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import firebase from "firebase";
+
 import Dashboard from "../pages/dashboard/Dashboard.vue";
 import Login from "../pages/login/Login.vue";
 import Register from "../pages/register/Register.vue";
-import firebase from "firebase";
 
-const routes: Array<RouteRecordRaw> = [
+import Quatro from "../pages/games/quatro/Quatro.vue";
+
+const mainRoutes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Dashboard",
@@ -31,10 +34,37 @@ const routes: Array<RouteRecordRaw> = [
   },
 ];
 
+const mainGameRoutes: Array<RouteRecordRaw> = [
+  {
+    path: "/quatro/loby",
+    name: "QuatroLoby",
+    component: Quatro,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/quatro/game",
+    name: "QuatroGame",
+    component: Quatro,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/quatro/game-over",
+    name: "QuatroGameOver",
+    component: Quatro,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+];
+
 // ---
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes: [...mainRoutes, ...mainGameRoutes],
 });
 
 // --- Redirect mechanism
@@ -65,6 +95,7 @@ router.beforeEach((to, from, next) => {
     } else {
       next();
     }
+    // ---
   } else {
     next();
   }

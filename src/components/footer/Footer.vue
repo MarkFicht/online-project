@@ -111,4 +111,10 @@
         width: $widthWrapper768;
     }
 }
+
+@media (max-width: $widthWrapper768) {
+    #footer-wrapper {
+        width: 100vw;
+    }
+}
 </style>

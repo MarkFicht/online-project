@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
@@ -29,7 +30,7 @@
     "typescript": "~3.9.3",
     "vanilla-tilt": "^1.7.0",
     "vue-class-component": "^8.0.0-rc.1",
-    "vue-property-decorator": "^9.1.2"
+    "vue-property-decorator": "^10.0.0-rc.3"
   },
   "browserslist": [
     "> 1%",

@@ -220,6 +220,12 @@
     }
 }
 
+@media (max-width: $widthWrapper768) {
+    #navbar-wrapper {
+        width: 100vw;
+    }
+}
+
 // ---
 // @keyframes border-button {
 //     from {
