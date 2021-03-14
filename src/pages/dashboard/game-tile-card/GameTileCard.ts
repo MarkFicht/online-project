@@ -3,7 +3,7 @@ import { Vue, Options, Prop } from "vue-property-decorator";
 import VanillaTilt from "vanilla-tilt";
 
 @Options({})
-export default class GameTile extends Vue {
+export default class GameTileCard extends Vue {
   // @Prop() exampleProperty!: string;
   // @Prop(String) exampleProperty: string | undefined;
   @Prop({ required: true }) gameTitle!: string;

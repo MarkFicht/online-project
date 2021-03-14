@@ -20,7 +20,7 @@
     </section>
 </template>
 
-<script lang="ts" src="./GameTile.ts" />
+<script lang="ts" src="./GameTileCard.ts" />
 
 <style scoped lang="scss">
 @import "../../../main";

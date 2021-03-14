@@ -6,7 +6,7 @@
 
         <article class="games-wrapper">
             <!-- Quatro -->
-            <GameTile
+            <GameTileCard
                 :game-title="gameName.QUATRO"
                 :status="gameStatus[0]"
                 @onPlay="onPlay"
@@ -14,7 +14,7 @@
             />
 
             <!-- Carcassonne -->
-            <GameTile
+            <GameTileCard
                 :game-title="gameName.CARCASSONE"
                 :status="gameStatus[1]"
                 @onPlay="onPlay"
@@ -22,7 +22,7 @@
             />
 
             <!-- Monopoly -->
-            <GameTile
+            <GameTileCard
                 :game-title="gameName.MONOPOLY"
                 :status="gameStatus[2]"
                 @onPlay="onPlay"
@@ -30,7 +30,7 @@
             />
 
             <!-- Dummy -->
-            <GameTile
+            <GameTileCard
                 game-title="DUMMY"
                 status="-"
                 @onPlay="onPlay"

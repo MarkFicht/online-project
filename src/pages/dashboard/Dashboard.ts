@@ -4,11 +4,11 @@ import "firebase/auth";
 import { GameName } from "@/enums/GameName";
 import { GameStatus } from "@/enums/GameStatus";
 
-import GameTile from "./game-tile/GameTile.vue";
+import GameTileCard from "./game-tile-card/GameTileCard.vue";
 
 @Options({
   components: {
-    GameTile,
+    GameTileCard,
   },
   mounted(): void {},
 })
