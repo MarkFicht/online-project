@@ -30,12 +30,12 @@
             />
 
             <!-- Dummy -->
-            <GameTileCard
+            <!-- <GameTileCard
                 game-title="DUMMY"
                 status="-"
                 @onPlay="onPlay"
                 @onShowDesc="onShowDesc"
-            />
+            /> -->
         </article>
     </main>
 </template>
