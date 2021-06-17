@@ -32,7 +32,7 @@
 
 #footer-wrapper {
     width: $widthWrapper1440;
-    height: 60px;
+    height: 80px;
     margin: 0 auto;
     display: flex;
     justify-content: center;

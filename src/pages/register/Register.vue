@@ -33,7 +33,7 @@
 
 .wrapper {
     width: 100%;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 160px);
     min-height: 560px;
     display: flex;
 }

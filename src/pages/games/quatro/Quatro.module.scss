@@ -18,28 +18,29 @@ div {
   z-index: 1;
   width: $widthWrapper1440;
   margin: 0 auto;
-  height: 100%;
-}
-
-.window-wrapper {
-  width: calc(100% - 40px);
-  min-height: calc(100vh - 125px - 60px - 80px);
-  margin: 50px auto 75px;
+  height: calc(100vh - 160px);
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.window-wrapper {
+  width: calc(100% - 40px);
+  margin: auto;
+  display: flex;
+}
+
 .game-container {
   width: 100%;
-  height: 700px;
+  height: calc(100vh - 160px - 80px);
   display: grid;
   grid-template-areas:
     "pawns    pawns"
     "player1  board"
     "player2  board";
-  grid-template-rows: 150px 1fr 1fr;
-  grid-template-columns: 150px 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-columns: 1fr 9fr;
   background: linear-gradient(to bottom right, #a4c5c7, #2d3f48);
   // background: linear-gradient(to bottom right, $colorBg, $colorBg2);
 }
@@ -55,7 +56,7 @@ div {
   align-items: center;
   width: 100%;
   height: 100%;
-  perspective: 750px;
+  perspective: 900px;
 }
 
 .current-player {
@@ -64,35 +65,32 @@ div {
 
 .second-player {
   grid-area: player2;
-  position: relative;
 }
 
 // ---
 .board {
-  width: $cubeSize * 4;
-  height: $cubeSize * 4;
+  width: 46vh;
+  height: 46vh;
   backface-visibility: visible;
   overflow: visible;
   transform-style: preserve-3d;
   // display: flex;
   // flex-wrap: wrap;
   display: grid;
-  grid-gap: 25px;
+  // grid-gap: 25px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
 }
 
 .board-field {
-  // width: $cubeSize;
-  // height: $cubeSize;
   position: relative;
   transform-style: preserve-3d;
-  // transform: translateZ(-10px);
+  transform: translateZ(10px);
   cursor: pointer;
   transition: 0.25s all ease-in-out;
 
   &:hover {
-    transform: translateZ(-15px);
+    transform: translateZ(-1px);
   }
 }
 
@@ -102,22 +100,22 @@ div {
 
 .board-cube-front,
 .board-cube-back {
-  width: $cubeSize;
-  height: $cubeSize;
+  width: 10vh;
+  height: 10vh;
 }
 
 .board-cube-right,
 .board-cube-left {
   width: 20px;
-  height: $cubeSize;
-  left: ($cubeSize / 2) - 10px;
+  height: 10vh;
+  left: calc(5vh - 10px);
 }
 
 .board-cube-top,
 .board-cube-bottom {
-  width: $cubeSize;
+  width: 10vh;
   height: 20px;
-  top: ($cubeSize / 2) - 10px;
+  top: calc(5vh - 10px);
 }
 
 .board-cube-front {
@@ -135,21 +133,21 @@ div {
 }
 
 .board-cube-right {
-  transform: rotateY(90deg) translateZ($cubeSize / 2);
+  transform: rotateY(90deg) translateZ(5vh);
   background-image: linear-gradient(to bottom, #b7fcfd, transparent),
     linear-gradient(to bottom, $cubeRightColor1, $cubeRightColor2);
   background-size: 1px 100%, auto;
   background-repeat: no-repeat;
 }
 .board-cube-left {
-  transform: rotateY(-90deg) translateZ($cubeSize / 2);
+  transform: rotateY(-90deg) translateZ(5vh);
 }
 
 .board-cube-top {
-  transform: rotateX(90deg) translateZ($cubeSize / 2);
+  transform: rotateX(90deg) translateZ(5vh);
 }
 .board-cube-bottom {
-  transform: rotateX(-90deg) translateZ($cubeSize / 2);
+  transform: rotateX(-90deg) translateZ(5vh);
   background-image: linear-gradient(to bottom, #9ee6e7, transparent),
     linear-gradient(to bottom, $cubeBotColor1, $cubeBotColor2);
   background-size: 1px 100%, auto;
@@ -168,9 +166,6 @@ div {
 @media (max-width: $widthWrapper1440) {
   .wrapper {
     width: $widthWrapper1024;
-  }
-  .window-container {
-    height: 600px;
   }
 }
 

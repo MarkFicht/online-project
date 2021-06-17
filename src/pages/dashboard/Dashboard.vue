@@ -48,6 +48,7 @@
 .wrapper {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 // .header-wrapper {
@@ -66,13 +67,15 @@
 
 .games-wrapper {
     width: $widthWrapper1440;
-    min-height: calc(100vh - 125px - 60px - 80px);
+    min-height: calc(100vh - 50px - 75px - 80px - 80px);
     margin: 50px auto 75px;
     display: grid;
     grid-template-columns: repeat(3, 400px);
     grid-template-rows: auto;
     grid-gap: 90px;
     justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 // ---

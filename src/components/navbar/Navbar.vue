@@ -39,8 +39,8 @@
 
 .wrapper {
     width: 100%;
-    // background-color: $colorBg2;
     background-color: transparent;
+    // background-color: $colorBg2;
     color: $color;
     position: relative;
     z-index: 1000;
@@ -65,7 +65,8 @@
     > h1 {
         display: flex;
         justify-self: center;
-        align-items: center;
+        // align-items: flex-end;
+        line-height: 100px;
         margin-right: 32px;
         font-size: 28px;
     }
@@ -73,7 +74,8 @@
     > p {
         display: flex;
         justify-self: center;
-        align-items: center;
+        // align-items: flex-end;
+        line-height: 95px;
         font-size: 20px;
         padding-top: 6px;
     }
@@ -82,7 +84,8 @@
 .links-wrapper {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    // align-items: flex-end;
+    line-height: 96px;
     list-style-type: none;
     margin-right: 20px;
     height: 80px;
@@ -96,6 +99,7 @@
         color: $color;
         text-decoration: none;
         margin-left: 30px;
+        margin-top: 28px;
         transition: 0.2s all;
         padding: 6px 10px;
         display: block;
