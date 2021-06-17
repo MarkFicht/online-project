@@ -11,7 +11,9 @@ export default class GameTileCard extends Vue {
 
   // ---
   mounted(): void {
-    VanillaTilt.init(this.$refs.tileContainer, { speed: 1500 });
+    VanillaTilt.init(this.$refs.tileContainer as HTMLElement | HTMLElement[], {
+      speed: 1500,
+    });
   }
 
   onPlay(event: Event): void {
