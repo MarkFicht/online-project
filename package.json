@@ -7,7 +7,7 @@
     "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "node scripts/gh-pages-deploy.js"
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "animejs": "^3.2.1",
