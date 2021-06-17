@@ -1,4 +1,4 @@
-# Online project - real-time gaming platform( Vue + Ts )
+# Online project - real time gaming platform( Vue + Ts )
 
 This project uses the firebase, for `multiplayer games in real time`.<br/>
 The game is created on a desktop computer browser
